@@ -65,7 +65,7 @@ func validate(val interface{}) error {
 
 }
 
-func main() {
+func main_valid_custom() { //remove _valid_custom if you want to go run this program
 	user := User{
 		Name:"Oleg",
 		Email:"abc@abc.lv",
