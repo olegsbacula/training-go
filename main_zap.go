@@ -6,7 +6,7 @@ import (
     "os"
 )
 
-func main_zap() { //remove zap from the name if want to run this program
+func main_zap() {
     _ = godotenv.Load()
 
     var logger *zap.Logger
@@ -31,3 +31,4 @@ func main_zap() { //remove zap from the name if want to run this program
         zap.Float64("storageLimit", 5.0),
     )
 }
+

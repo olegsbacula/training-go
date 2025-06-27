@@ -7,7 +7,6 @@ import (
 	"strconv"
 	"strings"
 
-	_ "github.com/go-playground/validator/v10"
 	"go.uber.org/zap"
 )
 type User struct {
@@ -16,7 +15,7 @@ type User struct {
 
 }
 
-func validate(val interface{}) error {
+func validate_values(val interface{}) error { 
 	v:=reflect.ValueOf(val)
 	fmt.Println(v)
 	for i:= 0; i<v.NumField();i++{
@@ -65,17 +64,17 @@ func validate(val interface{}) error {
 
 }
 
-func main_valid_custom() { //remove _valid_custom if you want to go run this program
+func main_valid_custom() {
 	user := User{
 		Name:"Oleg",
 		Email:"abc@abc.lv",
 		}
-		fmt.Println(validate(user))
+		fmt.Println(validate_values(user))
 	invalidUser := User{
 		Name:"o",
 		Email:"abcabc.lv",
 		}
-		fmt.Println(validate(invalidUser))
+		fmt.Println(validate_values(invalidUser))
 	// t := reflect.TypeOf(user)
 	// fmt.Println("Name:", t.Name())
 	// fmt.Println("Kind:", t.Kind())

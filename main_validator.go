@@ -36,7 +36,7 @@ func createUserHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "User created successfully!")
 }
 
-func main() {
+func main_validator() {
     http.HandleFunc("/create-user", createUserHandler)
     fmt.Println("Server started at :8080")
     http.ListenAndServe(":8080", nil)
